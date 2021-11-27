@@ -51,9 +51,8 @@ namespace UserMaintenance
 
         private void button3_Click(object sender, EventArgs e)
         {
-            User u = new User();
-            u.FullName = textBox1.Text;
-            users.Remove(u);
+            User u = new User();            
+            users.Remove((User)listBox1.SelectedItem);
         }
     }
 }
