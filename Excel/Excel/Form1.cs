@@ -96,6 +96,14 @@ namespace Excel
             headerRange.RowHeight = 60;
             headerRange.Interior.Color = Color.Salmon;
             headerRange.BorderAround2(Excelx.XlLineStyle.xlDashDot, Excelx.XlBorderWeight.xlThick);
+
+            Excelx.Range tableRange = xlSheet.get_Range(GetCell(2, 2), GetCell(xlSheet.UsedRange.Rows.Count, headers.Length));
+            tableRange.BorderAround2(Excelx.XlLineStyle.xlDashDot, Excelx.XlBorderWeight.xlThick);
+            Excelx.Range FirstColoumn = xlSheet.get_Range(GetCell(2, 1), GetCell(xlSheet.UsedRange.Rows.Count, 1));
+            FirstColoumn.Font.Bold = true;
+            FirstColoumn.Interior.Color = Color.LightYellow;
+            Excelx.Range LastColoumn = xlSheet.get_Range(GetCell(2, headers.Length), GetCell(xlSheet.UsedRange.Rows.Count, headers.Length));
+            LastColoumn.Interior.Color = Color.LightGreen;
         }
 
         private void LoadData()
